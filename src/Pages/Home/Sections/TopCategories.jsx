@@ -54,14 +54,15 @@ const TopCategories = () => {
         slidesPerView={windowWidth}
         className={"mySwiper"}
       >
-        {categories.map((elem, index) => (
-          <SwiperSlide key={elem + index} className="py-2">
-            <TopCategoryCard
-              categoryName={elem}
-              totalItems={itemsInEachCategory[index]?.length}
-            />
-          </SwiperSlide>
-        ))}
+       {Array.isArray(categories) &&
+  categories.map((elem, index) => (
+    <SwiperSlide key={elem + index} className="py-2">
+      <TopCategoryCard
+        categoryName={elem}
+        totalItems={itemsInEachCategory?.[index]?.length || 0}
+      />
+    </SwiperSlide>
+  ))}
       </Swiper>
     </div>
   );
