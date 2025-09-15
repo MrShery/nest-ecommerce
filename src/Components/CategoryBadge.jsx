@@ -38,7 +38,7 @@ const CategoryBadge = ({ sideBar = false }) => {
             {catItem}
             {sideBar && (
               <span className="w-5 h-5 rounded-full bg-[#B1E2CB] text-center ms-auto">
-                {categoriesHashMap[categories.indexOf(catItem)].length}
+                {categoriesHashMap[categories.indexOf(catItem)]?.length||0}
               </span>
             )}
           </Link>

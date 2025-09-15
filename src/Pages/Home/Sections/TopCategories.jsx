@@ -59,7 +59,7 @@ const TopCategories = () => {
     <SwiperSlide key={elem + index} className="py-2">
       <TopCategoryCard
         categoryName={elem}
-        totalItems={itemsInEachCategory?.[index]?.length || 0}
+        totalItems={itemsInEachCategory?.[index]?.length}
       />
     </SwiperSlide>
   ))}
