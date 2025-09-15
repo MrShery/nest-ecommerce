@@ -1,0 +1,59 @@
+
+  /* Custom scrollbar styles */
+  .customScrollDiv::-webkit-scrollbar {
+    width: 5px; /* Set width of the scrollbar */
+  }
+
+  .customScrollDiv::-webkit-scrollbar-thumb {
+    background-color: #878484; /* Color of the scrollbar thumb */
+  }
+
+  .customScrollDiv::-webkit-scrollbar-track {
+    background-color: #D1D1D1; /* Color of the track */
+  }
+
+  .customScrollDiv::-webkit-scrollbar-thumb:hover {
+    background-color: #717171; /* Change color when hovered */
+    cursor: pointer;
+  }
+
+ input[type="checkbox"] {
+    display: none;
+  }
+
+  label {
+    position: relative;
+    padding-left: 30px; /* Space for custom checkbox */
+    cursor: pointer;
+    user-select: none;
+    
+  }
+
+  label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 17px;
+    height: 17px;
+    background-color: #fff;
+    border-radius: 2px;
+    border: 2px solid #CED4DA;
+  }
+
+  input[type="checkbox"]:checked + label::before {
+    background-color: #3BB77E;
+    border-color: #3BB77E;
+    outline: none;
+  }
+
+
+  input[type="checkbox"]:checked + label::after {
+    content: "✔";
+    position: absolute;
+    left: 3px;
+    bottom: 0px;
+    color: white;
+    font-size: 14px;
+
+  }

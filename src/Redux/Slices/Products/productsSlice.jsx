@@ -1,0 +1,248 @@
+import { createSlice } from "@reduxjs/toolkit";
+const Img1 = "https://nest.botble.com/storage/products/11-1-400x400.jpg";
+const Img2 = "https://nest.botble.com/storage/products/19-1-400x400.jpg";
+let products = [
+  {
+    id: 1,
+    category: "Home Appliances",
+    productImg: [Img1, Img2],
+    productTitle: "Smart Vacuum Cleaner",
+    rating: 4.8,
+    ratingTitle: "(10)",
+    productPrice: 4999,
+    discount: 25,
+    productBadge: true,
+    p_badgeTitle: "Exclusive Deal",
+    PopUp: false,
+    brandName: "Dyson",
+    Tags: ["Smart", "Home", "Cleaning", "Vacuum"],
+    vendor: "GoPro"
+  },
+  {
+    id: 2,
+    category: "Electronics",
+    productImg: [Img1, Img2],
+    productTitle: "Wireless Headphones",
+    rating: 4.5,
+    ratingTitle: "(20)",
+    productPrice: 2999,
+    discount: 10.0,
+    productBadge: false,
+    p_badgeTitle: "Limited Stock",
+    brandName: "Sony",
+    Tags: ["Wireless", "Headphones", "Music", "Electronics"],
+    vendor: "Global Office"
+  },
+  {
+    id: 3,
+    category: "Home Appliances",
+    productImg: [Img1, Img2],
+    productTitle: "Electric Mixer",
+    rating: 4.7,
+    ratingTitle: "(15)",
+    productPrice: 1999,
+    discount: 20.0,
+    productBadge: true,
+    p_badgeTitle: "Best Seller",
+    brandName: "KitchenAid",
+    Tags: ["Mixer", "Kitchen", "Home", "Cooking"],
+    vendor: "Young Shop"
+  },
+  {
+    id: 4,
+    category: "Furniture",
+    productImg: [Img1, Img2],
+    productTitle: "Comfortable Sofa",
+    rating: 4.6,
+    ratingTitle: "(8)",
+    productPrice: 15999,
+    discount: 25.0,
+    productBadge: false,
+    p_badgeTitle: "Exclusive Offer",
+    brandName: "Ikea",
+    Tags: ["Furniture", "Sofa", "Comfort", "Living Room"],
+    vendor: "Global Store"
+  },
+  {
+    id: 5,
+    category: "Beauty",
+    productImg: [Img1, Img2],
+    productTitle: "Skincare Kit",
+    rating: 4.9,
+    ratingTitle: "(30)",
+    productPrice: 1499,
+    discount: 30.0,
+    productBadge: true,
+    p_badgeTitle: "Special Offer",
+    brandName: "Neutrogena",
+    Tags: ["Skincare", "Beauty", "Care", "Health"],
+    vendor: "Robert's Store"
+  },
+  {
+    id: 6,
+    category: "Fashion",
+    productImg: [Img1, Img2],
+    productTitle: "Men's Formal Shirt",
+    rating: 4.4,
+    ratingTitle: "(12)",
+    productPrice: 899,
+    discount: 10.0,
+    productBadge: true,
+    p_badgeTitle: "Hot",
+    brandName: "Van Heusen",
+    Tags: ["Fashion", "Shirt", "Formal", "Men"],
+    vendor: "GoPro"
+  },
+  {
+    id: 7,
+    category: "Sports",
+    productImg: [Img1, Img2],
+    productTitle: "Running Shoes",
+    rating: 4.3,
+    ratingTitle: "(5)",
+    productPrice: 2499,
+    discount: 5.0,
+    productBadge: true,
+    p_badgeTitle: "New",
+    brandName: "Nike",
+    Tags: ["Sports", "Shoes", "Running", "Fitness"],
+    vendor: "Global Office"
+  },
+  {
+    id: 8,
+    category: "Books",
+    productImg: [Img1, Img2],
+    productTitle: "Thriller Novel",
+    rating: 4.9,
+    ratingTitle: "(25)",
+    productPrice: 499,
+    discount: 50.0,
+    productBadge: false,
+    p_badgeTitle: "Bestseller",
+    brandName: "Penguin",
+    Tags: ["Books", "Novel", "Thriller", "Reading"],
+    vendor: "Young Shop"
+  },
+  {
+    id: 9,
+    category: "Toys",
+    productImg: [Img1, Img2],
+    productTitle: "Lego Set",
+    rating: 4.8,
+    ratingTitle: "(10)",
+    productPrice: 3499,
+    discount: 10.0,
+    productBadge: true,
+    p_badgeTitle: "Special Edition",
+    brandName: "Lego",
+    Tags: ["Toys", "Lego", "Building", "Kids"],
+    vendor: "Global Store"
+  },
+  {
+    id: 10,
+    category: "Groceries",
+    productImg: [Img1, Img2],
+    productTitle: "Organic Grains",
+    rating: 4.7,
+    ratingTitle: "(15)",
+    productPrice: 799,
+    discount: 20.0,
+    productBadge: false,
+    p_badgeTitle: "Special Offer",
+    brandName: "Organic Valley",
+    Tags: ["Groceries", "Organic", "Healthy", "Grains"],
+    vendor: "Robert's Store"
+  },
+  {
+    id: 11,
+    category: "Pet Supplies",
+    productImg: [Img1, Img2],
+    productTitle: "Dog Food Pack",
+    rating: 4.6,
+    ratingTitle: "(18)",
+    productPrice: 1199,
+    discount: 15.0,
+    productBadge: true,
+    p_badgeTitle: "Best Value",
+    PopUp: false,
+    brandName: "Pedigree",
+    Tags: ["Pets", "Dog", "Food", "Supplies"],
+    vendor: "GoPro"
+  },
+  {
+    id: 12,
+    category: "Outdoor",
+    productImg: [Img1, Img2],
+    productTitle: "Camping Tent",
+    rating: 4.8,
+    ratingTitle: "(22)",
+    productPrice: 8499,
+    discount: 20.0,
+    productBadge: true,
+    p_badgeTitle: "Adventure Ready",
+    brandName: "Coleman",
+    Tags: ["Outdoor", "Camping", "Tent", "Adventure"],
+    vendor: "Global Office"
+  },
+  {
+    id: 13,
+    category: "Gaming",
+    productImg: [Img1, Img2],
+    productTitle: "Gaming Mouse",
+    rating: 4.7,
+    ratingTitle: "(35)",
+    productPrice: 2499,
+    discount: 10.0,
+    productBadge: true,
+    p_badgeTitle: "Pro Gamer",
+    brandName: "Logitech",
+    Tags: ["Gaming", "Mouse", "Tech", "Performance"],
+    vendor: "Young Shop"
+  },
+  {
+    id: 14,
+    category: "Health",
+    productImg: [Img1, Img2],
+    productTitle: "Fitness Tracker",
+    rating: 4.5,
+    ratingTitle: "(40)",
+    productPrice: 3999,
+    discount: 15.0,
+    productBadge: false,
+    p_badgeTitle: "Limited Edition",
+    brandName: "Fitbit",
+    Tags: ["Health", "Fitness", "Tracker", "Exercise"],
+    vendor: "Global Store"
+  },
+  {
+    id: 15,
+    category: "Tools",
+    productImg: [Img1, Img2],
+    productTitle: "Cordless Drill",
+    rating: 4.8,
+    ratingTitle: "(12)",
+    productPrice: 5999,
+    discount: 10.0,
+    productBadge: true,
+    p_badgeTitle: "DIY Essential",
+    brandName: "DeWalt",
+    Tags: ["Tools", "Drill", "DIY", "Home Improvement"],
+    vendor: "Robert's Store"
+  }
+];
+
+const productsSlice = createSlice({
+  name: "products",
+  initialState: products,
+  reducers: {
+    updateProductDetail: (state, action) => {
+      return state.map((elem, index) => {
+        if (elem.id == action.payload.id)
+          return { ...elem, [action.payload.key]: action.payload.newVal };
+        else return elem;
+      });
+    },
+  },
+});
+export const { updateProductDetail } = productsSlice.actions;
+export default productsSlice.reducer;

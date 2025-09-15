@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html{
+  scroll-behavior: smooth;
+}
+* {
+  font-family: "Quicksand", sans-serif;
+}
+.myTransition {
+  transition: all ease-in-out 0.2s;
+}
+.myTransition2 {
+  transition: all ease-in-out 0.3s;
+}
+.myTransitionHalfSec{
+  transition: all ease-in-out 0.5s;
+
+}
+.resNav::-webkit-scrollbar{
+  display: none;
+}
+/* .myProductCard{
+  animation: onViewCardAnimation 1s  linear ;
+  animation-timeline: view();
+  animation-range: entry 0;
+  
+}
+@keyframes onViewCardAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(-20%);
+    
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+} */
+.HideScrollBar::-webkit-scrollbar-thumb {
+  background-color: #6e6e6e98;
+}
+.HideScrollBar::-webkit-scrollbar {
+  width: 2px;
+  height: .5rem;
+  background-color: #6e6e6e10;
+}
+.mainSlider .swiper-pagination-bullet {
+  background-color: transparent;
+  width: 12px;
+  height: 12px;
+  opacity: 0.7;
+  transform: scale(1.2);
+  border: solid 0.5px black;
+  transition: all linear 0.2s;
+  &&:hover {
+    background-color: #b1dab4;
+  }
+}
+
+/* Highlight active bullet */
+.mainSlider .swiper-pagination-bullet-active {
+  background-color: #3bb77e;
+  border: none;
+  &&:hover {
+    background-color: #3bb77e;
+  }
+}
+button {
+  user-select: none; /* Prevents the text from being selected */
+}
+.SpinAnimation {
+  width: 17px;
+  height: 17px;
+  border: 3.8px solid white;
+  border-top: 3.8px solid #3bb77e;
+  border-radius: 50%;
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* =======================================================Toast Style=================================================== */
+.Toastify__toast--success {
+  background: #28a745;
+  color: white;
+}
+
+.Toastify__toast--error {
+  background: #dc3545;
+}
+
+.Toastify__progress-bar {
+  background: rgb(255, 255, 255);
+}
