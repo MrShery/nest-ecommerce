@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import Button from "../../../Components/Button";
 import { IoMdPaperPlane } from "react-icons/io";
 import { useFormik } from "formik";
-import * as Yup from "up";
+import * as Yup from "yup";
 
 const SubscriptionCTASection = ({
   heading,
