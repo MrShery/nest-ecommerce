@@ -8,7 +8,7 @@ import { FaFacebook, FaTwitter } from "react-icons/fa";
 import SetionTitle from "./SectionTitle";
 import Button from "./Button";
 import { useFormik } from "formik";
-import * as Yup from "Yup";
+import * as Yup from 'yup';
 
 const VendorDetailedCard = ({ vendor }) => {
   const signUpSchema = Yup.object({
